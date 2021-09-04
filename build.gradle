@@ -1,0 +1,39 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id("java")
+}
+
+group = project.maven_group
+version = project.version
+
+repositories {
+    mavenCentral()
+    maven { url "https://papermc.io/repo/repository/maven-public/" }
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
+    compileOnly "io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT"
+}
+
+def targetJavaVersion = JavaVersion.VERSION_11
+java {
+    sourceCompatibility = targetJavaVersion
+    targetCompatibility = targetJavaVersion
+    if (JavaVersion.current() < targetJavaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion as String)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.encoding = "UTF-8" // Must have!
+    it.options.release.set(11)
+}
+
+processResources {
+    filter ReplaceTokens, tokens: [
+            "version": version,
+            "today": "unknown"
+    ]
+}
