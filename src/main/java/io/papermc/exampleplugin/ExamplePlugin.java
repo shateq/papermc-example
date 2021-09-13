@@ -7,12 +7,13 @@ public final class ExamplePlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // What should this plugin do at startup?
+        // What should this plugin do on startup?
         new ExampleEvent(this);
     }
 
     @Override
     public void onDisable() {
-        // Has got this plugin anything to do when disabling it?
+        // Should this plugin do anything when it is disabled?
     }
+
 }
