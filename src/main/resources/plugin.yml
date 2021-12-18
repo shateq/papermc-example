@@ -6,3 +6,8 @@ prefix: PluginName
 authors: [ Me ]
 description: Tell server owners what is the best description in your opinion!
 website: https://papermc.io/using-the-api
+commands:
+  hello:
+    description: Say hi!
+    usage: /<command>
+    aliases: ["ciao", "priviet"]

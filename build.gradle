@@ -1,5 +1,3 @@
-import org.apache.tools.ant.filters.ReplaceTokens
-
 plugins {
     id("java")
 }
@@ -15,17 +13,22 @@ dependencies {
     compileOnly "io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT"
 }
 
-def targetJavaVersion = JavaVersion.VERSION_16
 java {
-    sourceCompatibility = targetJavaVersion
-    targetCompatibility = targetJavaVersion
+    toolchain.languageVersion.set(JavaLanguageVersion.of(16))
 }
 
-tasks.withType(JavaCompile).configureEach {
-    it.options.encoding = "UTF-8" // Must have!
-    it.options.release.set(16)
+tasks {
+    compileJava {
+        options.encoding = "UTF-8" // Must have!
+        options.release.set(16) // Versions 1.16 and 1.17 are using Java 16
+    }
+
+    processResources {
+        filteringCharset = "UTF-8" // Must have!
+    }
 }
 
+import org.apache.tools.ant.filters.ReplaceTokens
 processResources {
     // Play with these, so you can Replace Tokens in your resources directory!
     filter ReplaceTokens, tokens: [

@@ -1,11 +1,11 @@
 *~
-run/
-
+*.DS_Store
 # gradle
 .gradle/
 build/
 out/
 classes/
+run/
 
 # eclipse
 eclipse
@@ -23,6 +23,3 @@ eclipse
 bin/
 .classpath
 .project
-
-# macos
-*.DS_Store
