@@ -6,17 +6,23 @@ group = project.maven_group
 version = project.version
 
 repositories {
+    mavenCentral()
     maven { url "https://papermc.io/repo/repository/maven-public/" }
 }
 
 dependencies {
-    compileOnly "io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT"
+    compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT")
+
+    // bStats - if you'd like
+    implementation("org.bstats:bstats-bukkit:2.2.1")
 }
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+    // withSourcesJar()
 }
 
+import org.apache.tools.ant.filters.ReplaceTokens
 tasks {
     compileJava {
         options.encoding = "UTF-8" // Must have!
@@ -25,14 +31,14 @@ tasks {
 
     processResources {
         filteringCharset = "UTF-8" // Must have!
+        // Play with these, so you can Replace Tokens in your resources directory!
+        filter ReplaceTokens, tokens: [
+                "version": version,
+                "today": "unknown"
+        ]
     }
-}
 
-import org.apache.tools.ant.filters.ReplaceTokens
-processResources {
-    // Play with these, so you can Replace Tokens in your resources directory!
-    filter ReplaceTokens, tokens: [
-            "version": version,
-            "today": "unknown"
-    ]
+    jar {
+
+    }
 }
