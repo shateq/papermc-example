@@ -2,7 +2,7 @@
 
 # Paper Plugin Example
 Template Minecraft plugin using PaperMC API!
-The thing that you don't need may just be deleted - the power is yours.
+The things that you don't need may just be deleted - the power is yours.
 
 ## Set up your project faster
 (There is also, use this template button somewhere.)
