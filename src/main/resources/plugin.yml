@@ -1,5 +1,5 @@
 name: ExamplePlugin
-version: @version@
+version: ${version}
 main: io.papermc.exampleplugin.ExamplePlugin
 api-version: 1.18
 prefix: Example Plugin

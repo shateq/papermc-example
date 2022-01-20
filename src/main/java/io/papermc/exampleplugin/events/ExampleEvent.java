@@ -17,6 +17,6 @@ public class ExampleEvent implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPaperServerListPing(final PaperServerListPingEvent e) {
-        Bukkit.getogger().info("Pong!");
+        Bukkit.getLogger().info("Pong!");
     }
 }

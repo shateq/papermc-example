@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 
 public final class ExamplePlugin extends JavaPlugin {
-    public static int id = 12345; // Constant plugin id
+    public static int id = 12345; // Constant plugin id from bStats
 
     @Override
     public void onEnable() {
