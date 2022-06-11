@@ -14,7 +14,7 @@ public final class ExamplePlugin extends JavaPlugin {
     public void onEnable() {
         // What should this plugin do on startup?
 
-        new ExampleEvent(this);
+        getServer().getPluginManager().registerEvents(new ExampleEvent(), this);
         PluginCommand hello = getCommand("hello");
         hello.setExecutor(new ExampleCommand());
 
