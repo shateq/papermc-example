@@ -1,19 +1,19 @@
 plugins {
-    id("java")
+    java
 }
 
-group = project.maven_group
-version = project.version
+group = "io.papermc"
+version = "1.0"
 
 repositories {
     mavenCentral()
-    maven { url "https://papermc.io/repo/repository/maven-public/" }
+    maven("https://papermc.io/repo/repository/maven-public/")
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT")
     // bStats - if you'd like
-    implementation("org.bstats:bstats-bukkit:2.2.1")
+    implementation("org.bstats:bstats-bukkit:3.0.0")
 }
 
 java {
@@ -30,9 +30,9 @@ tasks {
     processResources {
         filteringCharset = "UTF-8" // Must have!
 
-        // Versioning or other variables.
+        // Token replacing
         filesMatching("plugin.yml") {
-            expand "version": project.version
+            expand("version" to version)
         }
     }
 
