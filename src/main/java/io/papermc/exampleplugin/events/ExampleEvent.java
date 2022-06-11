@@ -8,12 +8,6 @@ import org.bukkit.event.EventPriority;
 import io.papermc.exampleplugin.ExamplePlugin;
 
 public class ExampleEvent implements Listener {
-    private static ExamplePlugin javaPlugin;
-
-    public ExampleEvent(ExamplePlugin examplePlugin) {
-        javaPlugin = examplePlugin;
-        Bukkit.getPluginManager().registerEvents(this, javaPlugin);
-    }
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPaperServerListPing(final PaperServerListPingEvent e) {

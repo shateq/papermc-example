@@ -1,6 +1,6 @@
-name: ExamplePlugin
+name: ExampleKotlinPlugin
 version: ${version}
-main: io.papermc.exampleplugin.ExamplePlugin
+main: io.papermc.exampleplugin.ExamplePluginKt
 api-version: 1.18
 prefix: Example Plugin
 authors: [ Me ]

@@ -1,5 +1,8 @@
 plugins {
     java
+    kotlin("jvm") version "1.6.20"
+    // Shading in the Kotlin standard library
+    id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 group = "io.papermc"
@@ -22,9 +25,13 @@ java {
 }
 
 tasks {
-    compileJava {
+    withType<JavaCompile> {
         options.encoding = "UTF-8" // Must have!
         options.release.set(17) // Java 17 for versions 1.18+
+    }
+
+    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions.jvmTarget = "17"
     }
 
     processResources {
