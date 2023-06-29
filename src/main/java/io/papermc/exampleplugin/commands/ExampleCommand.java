@@ -10,7 +10,7 @@ public class ExampleCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(command.getName().equalsIgnoreCase("hello")) {
-            sender.sendMessage("Hi!");
+            sender.sendPlainMessage("Hi!");
         }
         return true;
     }

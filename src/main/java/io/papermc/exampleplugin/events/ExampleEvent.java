@@ -2,10 +2,9 @@ package io.papermc.exampleplugin.events;
 
 import com.destroystokyo.paper.event.server.PaperServerListPingEvent;
 import org.bukkit.Bukkit;
-import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-import io.papermc.exampleplugin.ExamplePlugin;
+import org.bukkit.event.Listener;
 
 public class ExampleEvent implements Listener {
 

@@ -1,11 +1,11 @@
 name: ExamplePlugin
 version: ${version}
 main: io.papermc.exampleplugin.ExamplePlugin
-api-version: 1.18
+api-version: ${apiVersion}
 prefix: Example Plugin
 authors: [ Me ]
-description: Tell server owners what is the best description in your opinion!
-website: https://papermc.io/using-the-api
+description: ${desc}
+website: https://docs.papermc.io/paper/dev/getting-started
 commands:
   hello:
     description: Say hi!

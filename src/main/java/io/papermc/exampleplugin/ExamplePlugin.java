@@ -16,6 +16,7 @@ public final class ExamplePlugin extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new ExampleEvent(), this);
         PluginCommand hello = getCommand("hello");
+        assert hello != null;
         hello.setExecutor(new ExampleCommand());
 
         // bStats metrics
@@ -24,7 +25,7 @@ public final class ExamplePlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Should this plugin do anything when it is disabled?
+        // What should this plugin after disabling?
     }
 
     private @NotNull Metrics getMetrics(int serviceId) {
